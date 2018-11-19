@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
 
-class MyPage extends Component {
-  static navigationOptions = {
-    title: 'My page',
-  };
+class Links extends Component {
+  componentDidMount = () => {};
 
-  render() {
-    return (
-      <View>
-        <Text>hello</Text>
-      </View>
-    );
-  }
+  render = () => {
+    const { Layout } = this.props;
+
+    return <Layout />;
+  };
 }
 
 const mapStateToProps = ({ status }) => ({
@@ -26,4 +21,4 @@ const mapDispatchToProps = {};
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(MyPage);
+)(Links);

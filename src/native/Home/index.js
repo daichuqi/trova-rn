@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Image, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Button, Text } from 'native-base';
-import { connect } from 'react-redux';
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../../components/StyledText';
@@ -10,7 +9,7 @@ import devImg from '../../assets/images/robot-dev.png';
 import prodImg from '../../assets/images/robot-prod.png';
 
 const styles = StyleSheet.create(Styles);
-class HomeScreen extends Component {
+class Home extends Component {
   static navigationOptions = {
     header: null,
   };
@@ -70,14 +69,4 @@ class HomeScreen extends Component {
   };
 }
 
-const mapStateToProps = ({ status }) => ({
-  isLoading: status.loading || false,
-  successMessage: status.success || '',
-});
-
-const mapDispatchToProps = {};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(HomeScreen);
+export default Home;

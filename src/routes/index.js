@@ -4,9 +4,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import DefaultProps from '../constants/Navigation';
 
-import Home from '../screens/Home';
-import Links from '../screens/Links';
-import Mypage from '../screens/MyPage';
+import HomeContainer from '../containers/Home';
+import LinksContainer from '../containers/Links';
+import MypageContainer from '../containers/MyPage';
+
+import Home from '../native/Home';
+import Links from '../native/Links';
+import Mypage from '../native/MyPage';
 
 const TabIcon = ({ focused, name }) => (
   <Icon size={25} color={focused ? 'orange' : 'gray'} name={name} />
@@ -22,7 +26,7 @@ const Index = (
           icon={({ focused }) => <TabIcon name="home" focused={focused} />}
           {...DefaultProps.navbarProps}
         >
-          <Scene key="home" component={Home} />
+          <Scene key="home" component={HomeContainer} Layout={Home} />
         </Stack>
 
         <Stack
@@ -31,7 +35,7 @@ const Index = (
           icon={({ focused }) => <TabIcon name="rocket" focused={focused} />}
           {...DefaultProps.navbarProps}
         >
-          <Scene key="recipes" component={Links} />
+          <Scene key="recipes" component={LinksContainer} Layout={Links} />
         </Stack>
 
         <Stack
@@ -40,7 +44,7 @@ const Index = (
           icon={({ focused }) => <TabIcon name="apple" focused={focused} />}
           {...DefaultProps.navbarProps}
         >
-          <Scene key="profileHome" component={Mypage} />
+          <Scene key="profileHome" component={MypageContainer} Layout={Mypage} />
         </Stack>
       </Tabs>
     </Scene>
