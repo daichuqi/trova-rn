@@ -4,8 +4,9 @@ import { AppLoading, Asset, Font, Icon } from 'expo';
 import { StyleProvider, Root } from 'native-base';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
+import { Router, Stack } from 'react-native-router-flux';
 
-import AppNavigator from './src/navigation/AppNavigator';
+import Routes from './src/routes';
 import getTheme from './src/theme/components';
 import variables from './src/theme/variables/commonColor';
 import configureStore from './src/store/configureStore';
@@ -33,7 +34,9 @@ export default class App extends Component {
               <StyleProvider style={getTheme(variables)}>
                 <View style={styles.container}>
                   {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-                  <AppNavigator />
+                  <Router>
+                    <Stack key="root">{Routes}</Stack>
+                  </Router>
                 </View>
               </StyleProvider>
             </PersistGate>

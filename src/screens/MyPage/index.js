@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
+import { connect } from 'react-redux';
 
-export default class SettingsScreen extends Component {
+class MyPage extends Component {
   static navigationOptions = {
     title: 'My page',
   };
@@ -14,3 +15,15 @@ export default class SettingsScreen extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ status }) => ({
+  isLoading: status.loading || false,
+  successMessage: status.success || '',
+});
+
+const mapDispatchToProps = {};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(MyPage);

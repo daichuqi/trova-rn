@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 import { ExpoLinksView } from '@expo/samples';
 
 import Styles from './styles';
 const styles = StyleSheet.create(Styles);
-export default class LinksScreen extends Component {
+class Links extends Component {
   static navigationOptions = {
     title: 'Links',
   };
@@ -19,3 +20,15 @@ export default class LinksScreen extends Component {
     );
   }
 }
+
+const mapStateToProps = ({ status }) => ({
+  isLoading: status.loading || false,
+  successMessage: status.success || '',
+});
+
+const mapDispatchToProps = {};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Links);
