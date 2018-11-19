@@ -1,0 +1,23 @@
+node_modules/
+.expo/*
+npm-debug.*
+*.jks
+*.p12
+*.key
+*.mobileprovision
+
+.vscode/
+
+# OSX
+#
+.DS_Store
+
+# Android/IntelliJ
+android/
+#
+build/
+.idea
+.tmp
+.gradle
+local.properties
+*.iml
