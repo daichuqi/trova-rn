@@ -7,10 +7,12 @@ import DefaultProps from '../constants/Navigation';
 import HomeContainer from '../containers/Home';
 import LinksContainer from '../containers/Links';
 import MypageContainer from '../containers/MyPage';
+import LoginContainer from '../containers/Login';
 
 import Home from '../native/Home';
 import Links from '../native/Links';
 import Mypage from '../native/MyPage';
+import Login from '../native/Login';
 
 const TabIcon = ({ focused, name }) => (
   <Icon size={25} color={focused ? 'orange' : 'gray'} name={name} />
@@ -45,6 +47,7 @@ const Index = (
           {...DefaultProps.navbarProps}
         >
           <Scene key="profileHome" component={MypageContainer} Layout={Mypage} />
+          <Scene key="login" component={LoginContainer} Layout={Login} hideNavBar />
         </Stack>
       </Tabs>
     </Scene>

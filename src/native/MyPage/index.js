@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import { Button, Text } from 'native-base';
+import { Actions } from 'react-native-router-flux';
 
 class MyPage extends Component {
   static navigationOptions = {
@@ -9,7 +11,9 @@ class MyPage extends Component {
   render() {
     return (
       <View>
-        <Text>hello</Text>
+        <Button onPress={Actions.login}>
+          <Text>hello</Text>
+        </Button>
       </View>
     );
   }

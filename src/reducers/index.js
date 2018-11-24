@@ -2,6 +2,7 @@ import status from './status';
 // import member from './member';
 // import recipes from './recipes';
 // import locale from './locale';
+import { reducer as formReducer } from 'redux-form';
 
 const rehydrated = (state = false, action) => {
   switch (action.type) {
@@ -15,6 +16,7 @@ const rehydrated = (state = false, action) => {
 export default {
   rehydrated,
   status,
+  form: formReducer,
   // member,
   // recipes,
   // locale,

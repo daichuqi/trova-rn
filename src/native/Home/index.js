@@ -27,6 +27,7 @@ class Home extends Component {
 
             <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
+              <MonoText style={styles.codeHighlightText}>hesdfsdfsdf</MonoText>
             </View>
 
             <View>
@@ -57,10 +58,6 @@ class Home extends Component {
       </View>
     );
   }
-
-  _handleLearnMorePress = () => {
-    WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/guides/development-mode');
-  };
 
   _handleHelpPress = () => {
     WebBrowser.openBrowserAsync(
